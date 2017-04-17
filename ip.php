@@ -37,21 +37,21 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  </head>
 
-</head>
-   
-    <body>
+  <body>
+
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
           <nav>
-              <script> 
+            <script> 
 
                 function show_alert() { 
                 
-                  var msg = "Select a game!";
+                  var msg = "Select a country to begin!";
                   
                   alert(msg); 
                 
@@ -68,73 +68,48 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-             
+             <h2>Hello  <?php echo $_GET["name"]; ?>  Welcome!</h2>
               
             </div>
           </div>
-
-          <div class="inner cover">
-          	<script>
-	var pos = 0,test, test_status,question,choice,choices,chA,chB,chC,chD,correct=0;
-	var questions = [
-	["When was Norman Era started?","12th century","11th century","10th century","13th century","A"],
-	["Who increased agriculture and commerce in Ireland?","Viking","Normans","Saint Patrick","Farmers","B"],
-	["Who was the king of Ireland by Irish Parliament?","King Henry VIII","King Brian Boru","Henry Grattan","Normans","A"],
-	["When was Penal laws started in Ireland?","1779AD","1770AD","1778AD","1780","C"],
-	["When was Ireland trade with England?","1790AD","1782AD","1780AD","1785AD","B"],
-	
-	
-];
-
-function _ (x){
-	return document.getElementById(x);
-}
-
-function renderQuestion(){
-	test =  _("test");
-	if(pos >= questions.length){
-	test.innerHTML = "<h2> You got " + correct +"  of  "+ questions.length +"  questions correct</h2>";
-	_("test_status").innerHTML = "Test Completed";
-	pos = 0;
-	correct = 0;
-	return false;
-	}
-	_("test_status").innerHTML=" Question " +(pos+1)+ " of "+ questions.length;
-
-	question = questions[pos][0];
-	chA = questions[pos][1];
-	chB = questions[pos][2];
-	chC = questions[pos][3];
-	chD = questions[pos][4];
-	test.innerHTML = "<h3>"+question+"</h3>";
-	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
-	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
-	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
-	test.innerHTML += "<input type='radio' name='choices' value='D'> "+chD+"<br><br>";
-	test.innerHTML += "<button style='color:green;'' onclick='checkAnswer()'>Submit Answer</button>";
-}
-
-function checkAnswer(){
-	choices =document.getElementsByName("choices");
-	for(var i=0; i<choices.length;i++){
-		if(choices[i].checked){
-			choice = choices[i].value;
-		}
-	}
-	if(choice == questions[pos][5]){
-		correct++;
-	}
-	pos++;
-	renderQuestion();
-}
-window.addEventListener("load",renderQuestion, false);
-</script>
+          <div class="container">
+          
+            <div class="row">
             
-<h2 id="test_status"></h2>
-<div id="test"></div>
-<div><a href="quiz.html"><button class="btn" style='color:green;' >Quiz</button></a>
-</div>
- 
+              <div class="col-xs-12">
+                <!---- MODAL POPUP ------>
+                
+                <div class="modal" id="mymodal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h2 class="modal-title">Ireland</h2>
+                      </div>
+                      <div class="modal-body">
+                        <p>Ireland (Listeni/ˈaɪərlənd/; Irish: Éire [ˈeːɾʲə] ( listen); Ulster-Scots: Airlann pronounced [ˈɑːrlən]) is an island in the North Atlantic. It is separated from Great Britain to its east by the North Channel, the Irish Sea, and St George's Channel. Ireland is the second-largest island of the British Isles, the third-largest in Europe, and the twentieth-largest on Earth.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="patrick.html"><button class="btn" >History lesson</button></a>
+                        <a href="quiz.html"><button class="btn" >Take quiz</button></a>
+                      </div>
+                    </div><!---end modal content--->
+                  </div><!-- end. modal-dialog--->
+                </div>
+                
+                <!------END MODAL------->
+              </div>
+            </div>
+          </div>
+            <a href="#" data-toggle="modal" data-target="#mymodal">
+              <div class="inner cover">
+               <img src="Images/Ireland.png" height="150" width="150">
+              </div>
+            </a>
 
-</body>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
 </html>
