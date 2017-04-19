@@ -37,21 +37,21 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
 
-  <body>
-
+</head>
+   
+    <body>
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
           <nav>
-            <script> 
+              <script> 
 
                 function show_alert() { 
                 
-                  var msg = "Select a country to begin!";
+                  var msg = "Select a game!";
                   
                   alert(msg); 
                 
@@ -61,55 +61,46 @@
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="puzzle.html" class="round red">Puzzle</a></li>
-                	<li><a href="achieve.html" class="round yellow">Grades</a></li>
+                	<li><a href="grade.php" class="round yellow">Grades</a></li>
                 	<li><a href="#" onClick="show_alert()" class="round pink">Help</a></li>
                 </ul> 
               </nav>
 
           <div class="masthead clearfix">
             <div class="inner">
-             <h2>Hello <?php echo $_GET["name"]; ?> Welcome!</h2>
+             <h2>Welcome to Ireland History Quiz</h2>
               
             </div>
-          </div>
-          <div class="container">
-          
-            <div class="row">
-            
-              <div class="col-xs-12">
-                <!---- MODAL POPUP ------>
-                
-                <div class="modal" id="mymodal">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h2 class="modal-title">Ireland</h2>
-                      </div>
-                      <div class="modal-body">
-                        <p>Ireland (Listeni/ˈaɪərlənd/; Irish: Éire [ˈeːɾʲə] ( listen); Ulster-Scots: Airlann pronounced [ˈɑːrlən]) is an island in the North Atlantic. It is separated from Great Britain to its east by the North Channel, the Irish Sea, and St George's Channel. Ireland is the second-largest island of the British Isles, the third-largest in Europe, and the twentieth-largest on Earth.</p>
-                      </div>
-                      <div class="modal-footer">
-                        <a href="patrick.html"><button class="btn" >History lesson</button></a>
-                        <a href="quiz.html"><button class="btn" >Take quiz</button></a>
-                      </div>
-                    </div><!---end modal content--->
-                  </div><!-- end. modal-dialog--->
-                </div>
-                
-                <!------END MODAL------->
-              </div>
-            </div>
-          </div>
-            <a href="#" data-toggle="modal" data-target="#mymodal">
-              <div class="inner cover">
-               <img src="Images/Ireland.png" height="150" width="150">
-              </div>
-            </a>
+  </div>
+  <div class="inner cover">
+        The grades of quiz are:
+        <select Style="background-color:red;" name="quiz">
+                  <option value="Select Quiz">Select Quiz</option>
+                  <option value="Quiz 1">Quiz 1</option>
+                  <option value="Quiz 2">Quiz 2</option>
+                  <option value="Quiz 3">Quiz 3</option>
+                  <option value="Quiz 4">Quiz 4</option>
+                  <option value="Quiz 5">Quiz 5</option>
+                </select><br>
 
-        </div>
+						<div id="demo1"></div>
 
-      </div>
+						<button type="button" onclick="loadXMLDoc1()">View Details</button>
 
-    </div>
-  </body>
+						<script>
+								function loadXMLDoc1() {
+								  var xhttp = new XMLHttpRequest();
+								  xhttp.onreadystatechange = function() {
+								    if (xhttp.readyState == 4 && xhttp.status == 200) {
+								      document.getElementById("demo1").innerHTML = xhttp.responseText;
+								    }
+								  };
+								  xhttp.open("GET", "xml/my.xml", true);
+								  xhttp.send();
+								}
+						</script>
+
+  </div>
+
+</body>
 </html>

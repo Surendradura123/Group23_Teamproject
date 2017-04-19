@@ -37,21 +37,21 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
 
-  <body>
-
+</head>
+   
+    <body>
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
           <nav>
-            <script> 
+              <script> 
 
                 function show_alert() { 
                 
-                  var msg = "Select a country to begin!";
+                  var msg = "Select a game!";
                   
                   alert(msg); 
                 
@@ -61,37 +61,79 @@
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="puzzle.html" class="round red">Puzzle</a></li>
-                	<li><a href="grade.php" class="round yellow">Grades</a></li>
+                	<li><a href="achieve.html" class="round yellow">Grades</a></li>
                 	<li><a href="#" onClick="show_alert()" class="round pink">Help</a></li>
                 </ul> 
               </nav>
 
           <div class="masthead clearfix">
             <div class="inner">
-             <h2>Hello  <?php echo $_GET["name"]; ?>  Welcome!</h2>
+             
               
             </div>
           </div>
-          <div class="container">
-          
-              
-              </div>
-          
-            <a href="#" data-toggle="modal" data-target="#mymodal">
-              <div class="inner cover">
-               <img src="Images/Ireland.png" height="150" width="150">
-               <a href="quiz.html"><button class="btn" >Take quiz</button></a>
-               </div>
-               <div class="inner cover">
-               <img src="Images/portugal.png" height="150" width="150">
-               <a href="quiz1.html"><button class="btn" >Take quiz</button></a>
-              </div>
-            </a>
 
-        </div>
+          <div class="inner cover">
+          	<script>
+	var pos = 0,test, test_status,question,choice,choices,chA,chB,chC,chD,correct=0;
+	var questions = [
+	["When was Human beings startes to lived in Portugal?","5000BC","4000BC","3000BC","2000BC","C"],
+	["Who was the first Portuguese?","Hunters and fisherman","Hunters","Fisherman","Farmers","A"],
+	["When was farming started in Portugal?","1000BC","5000BC","4000BC","2000BC","C"],
+	["Who introduced iron to Portugal?","French","Spainesh","Britist","celtic","D"],
+	["Who start trading with Portugese?","Phoenicians","Lebanon","Greeks","1 and 2 both","D"],
+	
+];
 
-      </div>
+function _ (x){
+	return document.getElementById(x);
+}
 
-    </div>
-  </body>
+function renderQuestion(){
+	test =  _("test");
+	if(pos >= questions.length){
+	test.innerHTML = "<h2> You got " + correct +"  of  "+ questions.length +"  questions correct</h2>";
+	_("test_status").innerHTML = "Test Completed";
+	pos = 0;
+	correct = 0;
+	return false;
+	}
+	_("test_status").innerHTML=" Question " +(pos+1)+ " of "+ questions.length;
+
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	chD = questions[pos][4];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='D'> "+chD+"<br><br>";
+	test.innerHTML += "<button style='color:green;'' onclick='checkAnswer()'>Submit Answer</button>";
+}
+
+function checkAnswer(){
+	choices =document.getElementsByName("choices");
+	for(var i=0; i<choices.length;i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][5]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+window.addEventListener("load",renderQuestion, false);
+</script>
+            
+<h2 id="test_status"></h2>
+<div id="test"></div>
+<div><a href="quiz.html"><button class="btn" style='color:green;' >Quiz</button></a>
+</div>
+ 
+
+</body>
 </html>
