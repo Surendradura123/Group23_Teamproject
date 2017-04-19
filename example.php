@@ -41,21 +41,11 @@
 </head>
 <body>
     <nav>
-              <script> 
-
-                function show_alert() { 
-                
-                  var msg = "Select a game!";
-                  
-                  alert(msg); 
-                
-                }
               
-            </script>
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="history.html" class="round red">History</a></li>
-                	<li><a href="grade.php" class="round yellow">Result</a></li>
+                	<li><a href="grade.php" class="round yellow">About</a></li>
                 	<li><a href="help.html"  class="round pink">Help</a></li>
                 </ul> 
               </nav>
