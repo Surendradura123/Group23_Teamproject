@@ -47,21 +47,10 @@
 
         <div class="cover-container">
           <nav>
-              <script> 
-
-                function show_alert() { 
-                
-                  var msg = "Select a game!";
-                  
-                  alert(msg); 
-                
-                }
-              
-            </script>
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="history.html" class="round red">History</a></li>
-                	<li><a href="grade.php" class="round yellow">Grades</a></li>
+                	<li><a href="grade.php" class="round yellow">About</a></li>
                 	<li><a href="help.html" class="round pink">Help</a></li>
                 </ul> 
               </nav>
@@ -73,17 +62,17 @@
             </div>
   </div>
   <div class="inner cover">
-        The grades of quiz are:
-        <select Style="background-color:red;" name="quiz">
-                  <option value="Select Quiz">Select Quiz</option>
-                  <option value="Quiz 1">Quiz 1</option>
-                  <option value="Quiz 2">Quiz 2</option>
-                  <option value="Quiz 3">Quiz 3</option>
-                  <option value="Quiz 4">Quiz 4</option>
-                  <option value="Quiz 5">Quiz 5</option>
-                </select><br>
+    <h1>About</h1>
+    <h2>This is a history lesson quiz game.Specially develop for student who want to learn about history of Europe.</h2><br><br>
+    <p>Made by Surendra Dura</p>
+    <p>BSc in Computing(2nd Year)</p>
+    <p>Email:X15007669@student.ncirl.ie</p>
+    <p>@2017</p>
+        
 
-
+  </div>
+  </div>
+  </div>
   </div>
 
 </body>

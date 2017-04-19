@@ -47,21 +47,11 @@
 
         <div class="cover-container">
           <nav>
-            <script> 
-
-                function show_alert() { 
-                
-                  var msg = "Select a country to begin!";
-                  
-                  alert(msg); 
-                
-                }
-              
-            </script>
+            
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="history.html" class="round red">History</a></li>
-                	<li><a href="grade.php" class="round yellow">Grades</a></li>
+                	<li><a href="grade.php" class="round yellow">About</a></li>
                 	<li><a href="help.html"  class="round pink">Help</a></li>
                 </ul> 
               </nav>
@@ -78,11 +68,11 @@
             <a href="#" data-toggle="modal" data-target="#mymodal">
               <div class="inner cover">
                <img src="Images/Ireland.png" height="150" width="150">
-               <a href="quiz.html"><button class="btn" >Take quiz</button></a>
+               <a href="quiz.html"><button Style="color:red" class="btn" >Take quiz</button></a>
                </div>
                <div class="inner cover">
-               <img src="Images/portugal.png" height="150" width="150">
-               <a href="quiz1.html"><button class="btn" >Take quiz</button></a>
+               <img src="Images/portugual.png" height="150" width="150">
+               <a href="quiz1.html"><button Style="color:red" class="btn" >Take quiz</button></a>
               </div>
             </a>
 
