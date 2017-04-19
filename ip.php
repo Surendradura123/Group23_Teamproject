@@ -60,9 +60,9 @@
             </script>
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
-                  <li><a href="puzzle.html" class="round red">Puzzle</a></li>
+                  <li><a href="history.html" class="round red">History</a></li>
                 	<li><a href="grade.php" class="round yellow">Grades</a></li>
-                	<li><a href="#" onClick="show_alert()" class="round pink">Help</a></li>
+                	<li><a href="help.html"  class="round pink">Help</a></li>
                 </ul> 
               </nav>
 
@@ -73,8 +73,6 @@
             </div>
           </div>
           <div class="container">
-          
-              
               </div>
           
             <a href="#" data-toggle="modal" data-target="#mymodal">

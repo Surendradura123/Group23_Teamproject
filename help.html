@@ -37,21 +37,14 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-</head>
-   
-    <body>
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-          <nav>
-              <script> 
+  </head>
+<body>
+    <nav>
+            <script> 
 
                 function show_alert() { 
                 
-                  var msg = "Select a game!";
+                  var msg = "Select a country to begin!";
                   
                   alert(msg); 
                 
@@ -62,24 +55,83 @@
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="history.html" class="round red">History</a></li>
                 	<li><a href="grade.php" class="round yellow">Grades</a></li>
-                	<li><a href="help.html" class="round pink">Help</a></li>
+                	<li><a href="help.html"  class="round pink">Help</a></li>
                 </ul> 
               </nav>
+    
+     <div class="col-sm-4">
+             <a target="_blank"><img src="Images/home.png" alt="Movies" width="200" height="200"></a>
+				 <div class="desc"><b>Home</b></div>
 
-          <div class="masthead clearfix">
-            <div class="inner">
-             <h2>Welcome to Portugal History Quiz</h2>
-              <img src="Images/pro.png" height="250" width="250">
-            </div>
-          </div>
 
-          <div class="inner cover">
-        <a href="pong.html"><button class="btn" >Quiz 1</button></a>
-        <a href="pong1.html"><button class="btn" >Quiz 2</button></a>
-        <a href="pong2.html"><button class="btn" >Quiz 3</button></a>
-        <a href="pong3.html"><button class="btn" >Quiz 4</button></a>
-        <a href="pong4.html"><button class="btn" >Quiz 5</button></a>
-  </div>
+				 	<div id="demo1"></div>
 
+						<button type="button" onclick="loadXMLDoc1()">View Details</button>
+
+						<script>
+								function loadXMLDoc1() {
+								  var xhttp = new XMLHttpRequest();
+								  xhttp.onreadystatechange = function() {
+								    if (xhttp.readyState == 4 && xhttp.status == 200) {
+								      document.getElementById("demo1").innerHTML = xhttp.responseText;
+								    }
+								  };
+								  xhttp.open("GET", "xml/my.xml", true);
+								  xhttp.send();
+								}
+						</script>
+
+				</div>
+				
+				<div class="col-sm-4">
+             <a target="_blank"><img src="Images/history.png" alt="Movies" width="200" height="200"></a>
+				 <div class="desc"><b>History</b></div>
+
+
+				 	<div id="demo2"></div>
+
+						<button type="button" onclick="loadXMLDoc2()">View Details</button>
+
+						<script>
+								function loadXMLDoc2() {
+								  var xhttp = new XMLHttpRequest();
+								  xhttp.onreadystatechange = function() {
+								    if (xhttp.readyState == 4 && xhttp.status == 200) {
+								      document.getElementById("demo2").innerHTML = xhttp.responseText;
+								    }
+								  };
+								  xhttp.open("GET", "xml/his.xml", true);
+								  xhttp.send();
+								}
+						</script>
+
+				</div>
+				
+					<div class="col-sm-4">
+             <a target="_blank"><img src="Images/results.png" alt="Movies" width="200" height="200"></a>
+				 <div class="desc"><b>Results</b></div>
+
+
+				 	<div id="demo3"></div>
+
+						<button type="button" onclick="loadXMLDoc3()">View Details</button>
+
+						<script>
+								function loadXMLDoc3() {
+								  var xhttp = new XMLHttpRequest();
+								  xhttp.onreadystatechange = function() {
+								    if (xhttp.readyState == 4 && xhttp.status == 200) {
+								      document.getElementById("demo3").innerHTML = xhttp.responseText;
+								    }
+								  };
+								  xhttp.open("GET", "xml/res.xml", true);
+								  xhttp.send();
+								}
+						</script>
+
+				</div>
+    
+    
 </body>
-</html>
+
+ </html>

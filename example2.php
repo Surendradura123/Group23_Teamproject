@@ -39,14 +39,8 @@
     <![endif]-->
 
 </head>
-   
-    <body>
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-          <nav>
+<body>
+    <nav>
               <script> 
 
                 function show_alert() { 
@@ -65,21 +59,23 @@
                 	<li><a href="help.html" class="round pink">Help</a></li>
                 </ul> 
               </nav>
+              
+              <h1>Ireland History Lesson</h1>
+    
+    <?php
+        $xml = simplexml_load_file('portugal.xml');
 
-          <div class="masthead clearfix">
-            <div class="inner">
-             <h2>Welcome to Portugal History Quiz</h2>
-              <img src="Images/pro.png" height="250" width="250">
-            </div>
-          </div>
-
-          <div class="inner cover">
-        <a href="pong.html"><button class="btn" >Quiz 1</button></a>
-        <a href="pong1.html"><button class="btn" >Quiz 2</button></a>
-        <a href="pong2.html"><button class="btn" >Quiz 3</button></a>
-        <a href="pong3.html"><button class="btn" >Quiz 4</button></a>
-        <a href="pong4.html"><button class="btn" >Quiz 5</button></a>
-  </div>
-
+        foreach($xml->Portugal as $Portugal) {
+                 echo $Portugal->title.' <br> ';
+                 echo $Portugal->details.'<br>';
+            }
+?>
+    
 </body>
-</html>
+      
+     
+
+
+
+
+

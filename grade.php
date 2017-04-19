@@ -60,9 +60,9 @@
             </script>
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
-                  <li><a href="puzzle.html" class="round red">Puzzle</a></li>
+                  <li><a href="history.html" class="round red">History</a></li>
                 	<li><a href="grade.php" class="round yellow">Grades</a></li>
-                	<li><a href="#" onClick="show_alert()" class="round pink">Help</a></li>
+                	<li><a href="help.html" class="round pink">Help</a></li>
                 </ul> 
               </nav>
 
@@ -83,22 +83,6 @@
                   <option value="Quiz 5">Quiz 5</option>
                 </select><br>
 
-						<div id="demo1"></div>
-
-						<button type="button" onclick="loadXMLDoc1()">View Details</button>
-
-						<script>
-								function loadXMLDoc1() {
-								  var xhttp = new XMLHttpRequest();
-								  xhttp.onreadystatechange = function() {
-								    if (xhttp.readyState == 4 && xhttp.status == 200) {
-								      document.getElementById("demo1").innerHTML = xhttp.responseText;
-								    }
-								  };
-								  xhttp.open("GET", "xml/my.xml", true);
-								  xhttp.send();
-								}
-						</script>
 
   </div>
 

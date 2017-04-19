@@ -39,14 +39,8 @@
     <![endif]-->
 
 </head>
-   
-    <body>
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-          <nav>
+<body>
+    <nav>
               <script> 
 
                 function show_alert() { 
@@ -61,25 +55,27 @@
                 <ul>
                   <li><a href="ip.php" class="round green">Home</a></li>
                   <li><a href="history.html" class="round red">History</a></li>
-                	<li><a href="grade.php" class="round yellow">Grades</a></li>
-                	<li><a href="help.html" class="round pink">Help</a></li>
+                	<li><a href="grade.php" class="round yellow">Result</a></li>
+                	<li><a href="help.html"  class="round pink">Help</a></li>
                 </ul> 
               </nav>
+              
+              <h1>Ireland History Lesson</h1>
+    
+    <?php
+        $xml = simplexml_load_file('ireland.xml');
 
-          <div class="masthead clearfix">
-            <div class="inner">
-             <h2>Welcome to Portugal History Quiz</h2>
-              <img src="Images/pro.png" height="250" width="250">
-            </div>
-          </div>
-
-          <div class="inner cover">
-        <a href="pong.html"><button class="btn" >Quiz 1</button></a>
-        <a href="pong1.html"><button class="btn" >Quiz 2</button></a>
-        <a href="pong2.html"><button class="btn" >Quiz 3</button></a>
-        <a href="pong3.html"><button class="btn" >Quiz 4</button></a>
-        <a href="pong4.html"><button class="btn" >Quiz 5</button></a>
-  </div>
-
+        foreach($xml->Ireland as $Ireland) {
+                 echo $Ireland->title.' <br> ';
+                 echo $Ireland->details.'<br>';
+            }
+?>
+    
 </body>
-</html>
+      
+     
+
+
+
+
+
